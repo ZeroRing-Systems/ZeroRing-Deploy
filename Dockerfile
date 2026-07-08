@@ -24,7 +24,7 @@ RUN mkdir -p build && cd build && \
 FROM ubuntu:24.04 AS runtime
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpqxx-7.9t64 libpq5 libssl3t64 nginx postgresql-client \
+    libpqxx-7.8t64 libpq5 libssl3t64 nginx postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=backend-builder /build/cloud/build/server /usr/local/bin/server
