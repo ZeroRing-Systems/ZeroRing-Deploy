@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: zeroring
+      POSTGRES_PASSWORD: zeroring
+      POSTGRES_DB: zeroring
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  zeroring:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGUSER: zeroring
+      PGPASSWORD: zeroring
+      PGDATABASE: zeroring
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  pgdata:
