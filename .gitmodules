@@ -1,0 +1,6 @@
+[submodule "ZeroKernel"]
+	path = ZeroKernel
+	url = https://github.com/ZeroRing-Systems/ZeroKernel.git
+[submodule "ZeroRing-Cloud"]
+	path = ZeroRing-Cloud
+	url = https://github.com/ZeroRing-Systems/ZeroRing-Cloud.git
