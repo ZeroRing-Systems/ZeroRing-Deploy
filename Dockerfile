@@ -1,5 +1,7 @@
 FROM emscripten/emsdk:4.0.3 AS wasm-builder
 
+RUN pip3 install cmake --break-system-packages
+
 WORKDIR /build/kernel
 COPY ZeroKernel/ /build/kernel/
 
