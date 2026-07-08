@@ -1,4 +1,4 @@
-FROM emscripten/emsdk:3.1.61 AS wasm-builder
+FROM emscripten/emsdk:4.0.3 AS wasm-builder
 
 WORKDIR /build/kernel
 COPY ZeroKernel/ /build/kernel/
