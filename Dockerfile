@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=backend-builder /build/cloud/build/server /usr/local/bin/server
 COPY --from=wasm-builder /build/kernel/build/kernel.wasm /var/www/html/wasm/kernel.wasm
+COPY ZeroRing-Cloud/public/terminal.html /var/www/html/terminal.html
 COPY ZeroRing-Cloud/public/index.html /var/www/html/index.html
 COPY ZeroRing-Cloud/public/terminal.js /var/www/html/terminal.js
 
